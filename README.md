@@ -38,7 +38,8 @@ Welcome to your beginner-friendly command reference guide. This document provide
 
 <br>  
 
-## Remote:
+## Remote:  
+
 | Command| Notes|
 |----|----|
 | mstsc  |  *Note: start remote desktop session in GUI*|
@@ -50,7 +51,8 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |sc \\\10.0.0.50 \<CMD> \<service> |*Note: remote with sc*|  
 <br>  
 
-## Search
+## Search  
+
 | Command| Notes|
 |----|----|
 |find (case sensitive) | *Note: <br> /I Case Insensitive <br> /S Include subdirectories <br> /C Count of line containing string*|
@@ -59,7 +61,8 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |find /I z:\\stuff\\* \<"string">| *Note: If access is denied for folder, use asterisk for access to subfolders*|
 |tasklist \| find "svchost"| *Note: Search for svchost service in tasklist*|
 
-## Share
+## Share  
+
 | Command| Notes|
 |----|----|
 |net use z: \\\ \<IP to share>\\S \<password> /user:domain\\user| *Note: Mount fileshare*|
@@ -68,7 +71,7 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |net share| *Note: Manage, view status of shares, connect/disconnect to/from shares*|
 |net share \<name of share> = \<letter of drive>:\\\<path> \<options>| *Note: Netshare*|
 
-# 💻 PowerShell
+# 💻 PowerShell  
 
 
 | Command| Notes|
@@ -95,21 +98,22 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |icm -cn \<IP> -cr \<domain\\user> {Get-Eventlog Security \| where message -match "Logon Type:\\s+2" \| where timegenerated -gt "2022-08-22 00:00:00" \| Select index, instanceid, message} |*To get message of certain types on screen*|
 <br>
 
-## Dependencies
+## Dependencies  
 
 | Command| Notes|
 |----|----|
 |Get-Service \<service> \| Select requiredservices, dependentservices|
 <br>
 
-## History
+## History  
 
 | Command| Notes|
 |----|----|
 |Get-History|
 <br>
 
-## Out-File
+## Out-File  
+
 | Command| Notes|
 |----|-------|
 |ipconfig /all \| Out-file -filepath \<filepath> |*Redirect information to txt file*|
@@ -118,13 +122,15 @@ Welcome to your beginner-friendly command reference guide. This document provide
 <br>
 
 
-## Network
+## Network  
+
 | Command| Notes|
 |----|-------|
 |Get-NetTCPConnection|
 <br>
 
-## Processes
+## Processes  
+
 | Command| Notes|
 |----|-------|
 |gps \| gm| *To see options*|
@@ -133,7 +139,8 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |Stop-Process -name \<process name>|
 <br>
 
-## Services
+## Services  
+
 | Command| Notes|
 |----|-------|
 |Get-Service|
@@ -144,7 +151,8 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |Get-Service \<service> \| Select requiredservices, dependentservices|
 <br>
 
-## Firewall
+## Firewall  
+
 | Command| Notes|
 |----|-------|
 |Get-netfirewallrule|
@@ -152,7 +160,8 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |netsh advfirewall set allprofiles state on|*Enable firewall*|
 <br>
 
-## Remoting
+## Remoting  
+
 | Command| Notes|
 |----|-------|
 |icm -cn \<IP> -cr \<domain\\user> {command}|
@@ -161,7 +170,8 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |icm -cn \<IP> -cr \<domain/user> {certutil -hashfile C:\networkdata.txt} | *Remote hashfile*|
 <br>
 
-## Search
+## Search  
+
 | Command| Notes|
 |----|-------|
 |Get-Process -name notepad|
@@ -175,20 +185,23 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |icm -cn \<computername or IP> -cr \<domain/user> {gci -recurse -path C:\\windows -filter \<"string">} | *Remotely search file system for \<"string.exe"> name*|
 <br>
 
-## ADS
+## ADS  
+
 | Command| Notes|
 |----|-------|
 |PS C:\\ Get-Childitem -recurse \| %{Get-item $_.fullname -stream *} \| where stream -ne ':$Data'|
 <br>
 
-## Select-String
+## Select-String  
+
 | Command| Notes|
 |----|-------|
 |netstat -ano \| select-string "ESTABLISHED"|
 |Select-string -pattern \<string>|
 <br>
 
-## Filter/refine Example
+## Filter/refine Example  
+
 | Command| Notes|
 |----|-------|
 |Get-Childitem -recurse -file -filter \<string> \| Where-Object lastwritetime -gt (-lt -eq -match) \<string> or date \<07/05/2016> \| select name, lastwritetime \| measure-object | *Select is alias for Select-Object <br> Search every file containing "log" in the name and has been modified after "07/04/2016"*|
@@ -198,7 +211,8 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |Get-Process \| Select name, path @{name="Hash"; expression={(Get-Filehash $_.path).hash}} | *Name/Label = "Name of Parameter"*|
 <br>
 
-## Where-Object
+## Where-Object  
+
 | Command| Notes|
 |----|-------|
 |Get-Service \| Where-Object -property name -like "*cd*"|
@@ -207,21 +221,24 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |Get-Service \| Where-Object {$_.name -like "cd" -and $_.status -eq "running"}|  
 <br>
 
-## Format-Object
+## Format-Object  
+
 | Command| Notes|
 |----|-------|
 |Get-Process \| Sort-Object -property BasePriority | Format-Table -GroupBy Basepriority -wrap|
 |Format-Table -Autosize|
 <br>
 
-## Compare Files
+## Compare Files  
+
 | Command| Notes|
 |----|-------|
 |Compare-Object -referenceobject (Get-content service1.txt) -differenceobject (get-content service2.txt) \| out-file servicecompare.txt | *Compare two files and output into a new file*|
 |Get-command \| where-object property -comparison_operator value| *Compare an object's property to a given value*|
 <br>
 
-## Attributes
+## Attributes  
+
 | Command| Notes|
 |----|-------|
 |(Get-Item .\Squirrel.docx).attributes='Archive, Hidden' | *Sets Archive and hidden attrbutes to .\Squirrel.docx*|
@@ -229,34 +246,39 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |(gci -force .\Squirrel.docx).attributes='Archive' | *Removes attribute*|
 <br>
 
-## Format
+## Format  
+
 | Command| Notes|
 |----|-------|
 |Format-table -property \<specific property> -autosize | *-Shrinks columns <br> -groupby -One table per group <br> -wrap -Doesn't truncate*|
 <br>
 
-## Hash
+## Hash  
+
 | Command| Notes|
 |----|-------|
 |Get-filehash moredata.txt -algorithm SHA1 | *Get filehash for \<file<*|
 <br>
 
 
-## Count
+## Count  
+
 | Command| Notes|
 |----|-------|
 |(CMD).count|
 |Measure-object|
 <br>
 
-## Get-WMIObject/Ciminstance
+## Get-WMIObject/Ciminstance  
+
 | Command| Notes|
 |----|-------|
 |Get-CimClass -ClassName "*process*" | *List available classes*|
 |Get-CimInstance -ClassName Win32_Process | *Executes specific class*|
 <br>
 
-## Show-Command
+## Show-Command  
+
 | Command| Notes|
 |----|-------|
 |Show-Command Get-Process| *Creates  cmnd in GUI cmd window*|
