@@ -30,10 +30,12 @@ Welcome to your beginner-friendly command reference guide. This document provide
 > - C:\Users\<username>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 > - wmic startup list brief
 > - wmic startup list brief
+
 <br>  
 
 ## Hotfixes:
 > - `systeminfo /s <IP>`
+
 <br>  
 
 ## Remote:
