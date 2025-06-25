@@ -14,7 +14,7 @@ Welcome to your beginner-friendly command reference guide. This document provide
 - [PowerShell](#powershell)
 
 
-## 🖥️ Windows CMDline
+## Windows CMDline
 
 ## Cmdline  
 
@@ -71,7 +71,7 @@ Welcome to your beginner-friendly command reference guide. This document provide
 |net share| *Note: Manage, view status of shares, connect/disconnect to/from shares*|
 |net share \<name of share> = \<letter of drive>:\\\<path> \<options>| *Note: Netshare*|
 
-# 💻 PowerShell  
+## PowerShell  
 
 
 | Command| Notes|
