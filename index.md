@@ -7,7 +7,7 @@ Welcome to your beginner-friendly command reference guide. This document provide
 ## Table of Contents
 - [Windows CMDline](#windows-cmd)
 - [PowerShell](#powershell)
-- 
+
 
 # 🖥️ Windows CMD
 
