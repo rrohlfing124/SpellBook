@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 # Cybersecurity Analyst Command Reference
 
 Welcome to your beginner-friendly command reference guide. This document provides categorized examples of commonly used commands across various platforms.
