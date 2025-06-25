@@ -43,10 +43,10 @@ Welcome to your beginner-friendly command reference guide. This document provide
 | Command| Notes|
 |----|----|
 | mstsc  |  *Note: start remote desktop session in GUI*|
-| winrs -r:<IP> -u:USERNAME -p:PASSWORD COMMAND | 
-| \\\IP -u:USERNAME -p:PASSWORD COMMAND | *Note: located in sysinternals*|
+| winrs -r:<IP> -u:USERNAME -p:PASSWORD COMMAND | |
+| \\\IP -u:USERNAME -p:PASSWORD COMMAND | *Note: located in sysinternals* |
 | psexec \\<IP> -u:USERNAME -p: PASSWORD -S COMMAND  |  *Note: System Priveleges*|
-| psexec \\<IP> COMMAND  |
+| psexec \\<IP> COMMAND  ||
 | wmic /node:<IP> process where "name like '%svc%'" get name, processid, commandline  |  *Note: For remote machines, get name, process IDs for process svc*|
 |sc \\\10.0.0.50 \<CMD> \<service> |*Note: remote with sc*|  
 <br>  
@@ -66,32 +66,32 @@ Welcome to your beginner-friendly command reference guide. This document provide
 | Command| Notes|
 |----|----|
 |net use z: \\\ \<IP to share>\\S \<password> /user:domain\\user| *Note: Mount fileshare*|
-|net use \\\ \<server> W12SVR|
+|net use \\\ \<server> W12SVR||
 |Z:|*Note: Change drive*|
 |net share| *Note: Manage, view status of shares, connect/disconnect to/from shares*|
-|net share \<name of share> = \<letter of drive>:\\\<path> \<options>| *Note: Netshare*|
+|net share \<name of share> = \<letter of drive>:\\\<path> \<options> | *Note: Netshare*|
 
 ## PowerShell  
 
 
 | Command| Notes|
 |----|----|
-|Get-Alias \<command>|
-|Get-Alias -definition where-object|
-|ICM|*Invoke command*|
-|CN|*Computer Name*|
-|CR|*Credentials*|
-|gci|*Get-Childiten*|
-|select|*Select-Object*|
-|gps|*Get-Process*|
-|gm|*Get-Member*|  
+|Get-Alias \<command>||
+|Get-Alias -definition where-object||
+|ICM|*Invoke command*||
+|CN|*Computer Name*||
+|CR|*Credentials*||
+|gci|*Get-Childiten*||
+|select|*Select-Object*||
+|gps|*Get-Process*||
+|gm|*Get-Member*||  
 <br>  
 
 ## Audit  
 
 | Command| Notes|
 |----|----|
-|Get-Eventlog Security \| Group-Object instanceid|
+|Get-Eventlog Security \| Group-Object instanceid||
 |Get-Eventlog Security -instanceid \<####> \| where {timewritten -gt "2022-08-22 00:00:00"} \| Group-Object Eventid | *Return how many events with ID were generated on said date*|
 |icm {Get-Eventlog Security -instanceid \<####> \| where {timewritten -gt "2022-08-22 00:00:00"} \| Group-Object Eventid} -cn \<IP> -cr \<domain\\user>|
 |icm -cn \<IP> -cr \<domain\\user> {Get-Eventlog Security \| where message -match "Logon Type:\\s+2" \| Group-Object Eventid} |*Match logon types in eventViewer*|
