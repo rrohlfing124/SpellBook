@@ -10,11 +10,11 @@ Welcome to your beginner-friendly command reference guide. This document provide
 ---
 
 ## Table of Contents
-- [Windows CMDline](#windows-cmd)
+- [Windows CMDline](#windows-cmdline)
 - [PowerShell](#powershell)
 
 
-# 🖥️ Windows CMD
+## 🖥️ Windows CMDline
 
 ## Cmdline  
 
